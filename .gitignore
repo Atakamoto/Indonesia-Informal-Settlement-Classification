@@ -19,8 +19,10 @@ __pycache__/
 # VSCode
 .vscode/
 
-# Data (do NOT upload large datasets)
-data/
+# Data 
+*.tif
+*.tiff
+*.vrt
 
 # Models
 models/
