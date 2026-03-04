@@ -21,9 +21,9 @@ __pycache__/
 
 # Data 
 data/
-*.tif
-*.tiff
-*.vrt
+Formal_Settlement_Images_V1/
+Informal_Batch1_Clipped__580/
+
 
 # Models
 models/
