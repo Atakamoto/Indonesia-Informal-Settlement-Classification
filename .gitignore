@@ -20,8 +20,7 @@ __pycache__/
 .vscode/
 
 # Data (do NOT upload large datasets)
-data/raw/
-data/processed/
+data/
 
 # Models
 models/
