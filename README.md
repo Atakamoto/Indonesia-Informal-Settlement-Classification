@@ -7,11 +7,9 @@ This project focuses on detecting and classifying informal settlements (slums) i
 ## Project Structure
 
 ```markdown
-├── data/ # Raw and processed datasets
+├── data/ # Datasets
 ├── notebooks/ # Exploratory analysis and experiments
-├── src/ # Source code (preprocessing, training, evaluation)
 ├── models/ # Saved trained models
-├── reports/ # Figures, results, documentation
 ├── README.md
 ├── requirements.txt
 └── .gitignore
