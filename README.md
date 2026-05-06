@@ -34,7 +34,7 @@ data/
 │   └── ...
 ```
 
-Each tile represents a 50m × 50m satellite image patch labeled as either:
+Each tile represents a 100m × 100m satellite image patch labeled as either:
 
 - `Formal` (planned housing)
 - `Informal` (slum / unplanned settlement)
