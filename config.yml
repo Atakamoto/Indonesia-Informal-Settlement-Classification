@@ -1,0 +1,17 @@
+data:
+  formal_dir: "data/Formal_Settlement_Images"
+  informal_dir: "data/Informal_Settlement_Images"
+
+model:
+  name: "cnn"
+  input_channels: 3
+  band_indices: [1, 2, 3]
+  save_path: "outputs/models/cnn.pth"
+
+training:
+  image_size: 224
+  batch_size: 32
+  epochs: 10
+  learning_rate: 0.001
+  test_size: 0.2
+  random_state: 42
