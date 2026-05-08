@@ -1,6 +1,9 @@
 import torch
 import torch.nn as nn
+from pathlib import Path
+
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, confusion_matrix
 from torch.utils.data import DataLoader
 
 from models.cnn import BasicCNN
@@ -41,6 +44,7 @@ def train_cnn(config):
     ).to(device)
 
     criterion = nn.BCEWithLogitsLoss()
+
     optimizer = torch.optim.Adam(
         model.parameters(),
         lr=config["training"]["learning_rate"]
@@ -67,6 +71,46 @@ def train_cnn(config):
 
         avg_loss = total_loss / len(train_loader)
         print(f"Epoch {epoch + 1}: Loss = {avg_loss:.4f}")
+
+    model.eval()
+
+    all_preds = []
+    all_labels = []
+
+    test_dataset = SettlementDataset(
+        X_test,
+        y_test,
+        image_size=config["training"]["image_size"],
+        band_indices=config["model"]["band_indices"]
+    )
+
+    test_loader = DataLoader(
+        test_dataset,
+        batch_size=config["training"]["batch_size"],
+        shuffle=False
+    )
+
+    with torch.no_grad():
+        for images, labels in test_loader:
+            images = images.to(device)
+
+            outputs = model(images)
+            preds = (torch.sigmoid(outputs) > 0.5).float()
+
+            all_preds.extend(preds.cpu().numpy().flatten())
+            all_labels.extend(labels.numpy())
+
+    cm = confusion_matrix(all_labels, all_preds)
+    accuracy = accuracy_score(all_labels, all_preds)
+
+    print("Confusion Matrix:")
+    print(cm)
+    print(f"Test Accuracy: {accuracy:.4f}")
+
+    Path(config["model"]["save_path"]).parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
 
     torch.save(model.state_dict(), config["model"]["save_path"])
 

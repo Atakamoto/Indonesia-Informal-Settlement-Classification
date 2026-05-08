@@ -25,7 +25,7 @@ class SettlementDataset(Dataset):
         with rasterio.open(path) as src:
             image = src.read(self.band_indices)
 
-        image = image[:self.input_channels, :, :]
+        image = image[:len(self.band_indices), :, :]
 
         image = image.astype(np.float32)
 
