@@ -22,11 +22,6 @@ __pycache__/
 # Data 
 data/
 
-
-
-# Models
-models/
-
 # Environment variables
 .env
 
@@ -41,3 +36,5 @@ htmlcov/
 build/
 dist/
 *.egg-info/
+
+outputs/
