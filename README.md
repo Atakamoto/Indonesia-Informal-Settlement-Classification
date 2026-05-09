@@ -165,7 +165,7 @@ The pipeline will:
 5. Save trained model weights
 
 ---
-# Experiementing the Pipeline
+# Experiementing with the Pipeline
 To change the models hyperparameter at a surface level you can change values in the config.yml file.
 To change the model (not relevent now because we only have one) you can look for the model name and change the argument below
 
