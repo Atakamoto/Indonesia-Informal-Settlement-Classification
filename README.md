@@ -44,7 +44,7 @@ Indonesia-Informal-Settlement-Classification/
 
 This repository does not include the satellite imagery used for training and evaluation due to file size limitations.
 
-To follow the notebook, place the labeled image tiles in the following directory structure:
+To follow the pipeline, place the labeled image tiles in the following directory structure:
 
 ```
 data/
