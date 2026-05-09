@@ -115,6 +115,8 @@ pip install -r requirements.txt
 ---
 
 # Running the Pipeline
+*Note that as of now this model will likely not do well. We still need more data and will likely try different models. This is just to setup and make sure things run.
+
 In the root of the directory: 
 Run training with:
 
