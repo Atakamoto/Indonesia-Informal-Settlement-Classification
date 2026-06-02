@@ -66,6 +66,10 @@ Each tile represents a 100m × 100m satellite image patch labeled as either:
 
 Tiles are stored as GeoTIFF files.
 
+More Information on how we classified data located in these slides:
+https://docs.google.com/presentation/d/1wlqHL3hwhZLUf_4iAr2Dor6iGCDF86pp4vrreePYurA/edit?usp=drive_link
+https://docs.google.com/presentation/d/1skPTUyDHYdNwZSnGQh4CA6dm-FVq0AqCqegeyFCRMHQ/edit?usp=drive_link
+
 ---
 
 # Requirements
